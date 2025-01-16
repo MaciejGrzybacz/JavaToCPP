@@ -1,0 +1,30 @@
+Java code:
+class Simple {
+    private int number;
+
+    public Simple(int number) {
+        this.number = number;
+    }
+
+    public void increment() {
+        number++;
+        System.out.println("Number: " + number);
+    }
+}
+
+C++ result:
+#include <iostream>
+
+class Simple {
+private:
+    int number;
+
+public:
+    Simple(int number) : number(number) {
+    }
+
+    void increment() {
+        number++;
+        std::cout << "Number: " << number << std::endl;
+    }
+};

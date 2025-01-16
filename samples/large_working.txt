@@ -1,0 +1,256 @@
+Java code:
+class Foo {
+    private String name;
+    private int age;
+    protected double height;
+    public int weight;
+
+    public Foo(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    // Test HashSet operations
+    protected void testSet() {
+        HashSet<String> set = new HashSet<>();
+        set.add("test");
+        bool x = set.contains("test");
+        set.add("another");
+        set.size();
+    }
+
+    // Test ArrayList operations
+    protected void testList() {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(10);
+        numbers.get(0);
+        numbers.size();
+    }
+
+    // Test HashMap operations
+    protected void testMap() {
+        HashMap<String, Integer> map = new HashMap<>();
+        map.put("key", 5);
+        map.put("another", 10);
+        map.get("key");
+        map.size();
+    }
+
+    // Test basic for loop
+    public void testForLoop() {
+        for (int i = 0; i < 10; i++) {
+            System.out.println(i);
+        }
+
+        System.out.println("Loop finished");
+    }
+
+    // Test if-else conditions
+    public void testIfCondition() {
+        int a = 5;
+        int b = 10;
+
+        if (a > b) {
+            System.out.println("a is greater");
+        } else {
+            System.out.println("b is greater");
+        }
+
+        return;
+    }
+
+    // Test while loop
+    public void testWhileLoop() {
+        int counter = 0;
+
+        while (counter < 5) {
+            System.out.println("Counter: " + counter);
+            counter++;
+        }
+
+        return;
+    }
+
+    // Test primitive data types
+    public void testPrimitives() {
+        int x = 5;
+        double pi = 3.14;
+        bool flag = true;
+    }
+
+    // Test string operations
+    public void testStrings() {
+        String name = "John";
+        System.out.println("Name: " + name);
+    }
+
+    // Test field access and modification
+    private void testFieldModification() {
+        // This is a comment
+        this.name = "New name";
+        System.out.println("Name changed to: " + name);
+    }
+
+    protected void testIncAndDec() {
+        int x = 5;
+        x++;
+        x--;
+    }
+
+    // Test container declarations
+    public void testContainerDeclarations() {
+        // Declare different types of containers
+        List<Integer> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+        HashMap<String, Integer> map = new HashMap<>();
+        HashSet<String> set = new HashSet<>();
+    }
+
+    private void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+} 
+
+C++ result:
+#include <iostream>
+#include <map>
+#include <set>
+#include <string>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+class Foo {
+private:
+    std::string name;
+    int age;
+
+protected:
+    double height;
+
+public:
+    int weight;
+
+    Foo(std::string name, int age) : name(name), age(age), height(0.0), weight(0) {
+    }
+
+protected:
+    // Test HashSet operations
+    void testSet() {
+        std::unordered_set<std::string> set{};
+        set.insert("test");
+        bool x{set.contains("test")};
+        set.insert("another");
+        set.size();
+    }
+
+    // Test ArrayList operations
+    void testList() {
+        std::vector<int> numbers{};
+        numbers.push_back(5);
+        numbers.push_back(10);
+        numbers.at(0);
+        numbers.size();
+    }
+
+    // Test HashMap operations
+    void testMap() {
+        std::unordered_map<std::string, int> map{};
+        map.insert({"key", 5});
+        map.insert({"another", 10});
+        map.at("key");
+        map.size();
+    }
+
+public:
+    // Test basic for loop
+    void testForLoop() {
+
+        for (int i{0}; i < 10; i++) {
+            std::cout << i << std::endl;
+        }
+
+        std::cout << "Loop finished" << std::endl;
+    }
+
+    // Test if-else conditions
+    void testIfCondition() {
+        int a{5};
+        int b{10};
+
+        if (a > b) {
+            std::cout << "a is greater" << std::endl;
+        }
+        else {
+            std::cout << "b is greater" << std::endl;
+        }
+
+        return;
+    }
+
+    // Test while loop
+    void testWhileLoop() {
+        int counter{0};
+
+        while (counter < 5) {
+            std::cout << "Counter: " << counter << std::endl;
+            counter++;
+        }
+
+        return;
+    }
+
+    // Test primitive data types
+    void testPrimitives() {
+        int x{5};
+        double pi{3.14};
+        bool flag{true};
+    }
+
+    // Test string operations
+    void testStrings() {
+        std::string name{"John"};
+        std::cout << "Name: " << name << std::endl;
+    }
+
+private:
+    // Test field access and modification
+    void testFieldModification() {
+        // This is a comment
+        this->name = "New name";
+        std::cout << "Name changed to: " << name << std::endl;
+    }
+
+protected:
+    void testIncAndDec() {
+        int x{5};
+        x++;
+        x--;
+    }
+
+public:
+    // Test container declarations
+    void testContainerDeclarations() {
+        // Declare different types of containers
+        std::vector<int> list1{};
+        std::vector<std::string> list2{};
+        std::unordered_map<std::string, int> map{};
+        std::unordered_set<std::string> set{};
+    }
+
+private:
+    void setName(std::string name) {
+        this->name = name;
+    }
+
+public:
+    std::string getName() {
+        return name;
+    }
+};
+

@@ -1,0 +1,46 @@
+Java code:
+class DataProcessor {
+    private List<Integer> numbers;
+
+    public DataProcessor() {
+        this.numbers = new ArrayList<>();
+    }
+
+    public void processNumbers() {
+        int sum = 0;
+
+        for(int i = 0; i < numbers.size(); i++) {
+            sum += numbers.get(i); // += not supported
+        }
+    }
+
+    public void addNumber(int number) {
+        numbers.add(number);
+    }
+}
+
+C++ result:
+#include <iostream>
+#include <vector>
+
+class DataProcessor {
+private:
+    std::vector<int> numbers;
+
+public:
+    DataProcessor() : numbers(newArrayList<>()) {
+    }
+
+    void processNumbers() {
+        int sum{0};
+
+        for (int i{0}; i < numbers.size(); i++) {
+            sum +  = numbers.get(i);
+        }
+
+    }
+
+    void addNumber(int number) {
+        numbers.add(number);
+    }
+};

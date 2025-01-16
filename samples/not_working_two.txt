@@ -1,0 +1,75 @@
+Java code:
+class Animal {
+    protected String name;
+
+    public Animal(String name) {
+        this.name = name;
+    }
+
+    public void makeSound() {
+        System.out.println("Generic animal sound");
+    }
+}
+
+class Zoo extends Animal { //our grammar doesn't support inheritance
+    private List<String> animals;
+
+    public Zoo(String name) {
+        super(name);
+        this.animals = new ArrayList<>(); //error here
+    }
+
+    public void addAnimals() {
+        for (String animal : animals) { // no for-each support
+            System.out.println("Added: " + animal);
+        }
+    }
+
+    @Override  //another error
+    public void makeSound() {
+        System.out.println("Zoo sounds!");
+    }
+}
+
+C++ result:
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Animal {
+protected:
+    std::string name;
+
+public:
+    Animal(std::string name) : name(name) {
+    }
+
+    void makeSound() {
+        std::cout << "Generic animal sound" << std::endl;
+    }
+};
+
+class Zoo {
+private:
+    std::vector<std::string> animals;
+
+public:
+    Zoo(std::string name) : animals(newArrayList<>()) {
+    }
+
+    void addAnimals() {
+
+        for (std::string animal{}; ; ) {
+            std::cout << "Added: " << animal << std::endl;
+        }
+
+    }
+
+private:
+
+public:
+    void makeSound() {
+        std::cout << "Zoo sounds!" << std::endl;
+    }
+};
+
