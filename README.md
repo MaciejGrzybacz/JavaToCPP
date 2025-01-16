@@ -76,16 +76,25 @@ typeDeclaration
 ```bash
 pip install antlr4-python3-runtime
 ```
-
-2. Run the translator:
+2. Compile the grammar:
 ```bash
-python translate.py --input file.java --output file.cpp
-```
+java -jar lib/antlr-4.13.1-complete.jar -Dlanguage=Python3 -o src/gen src/JavaGrammar.g4
+java -jar lib/antlr-4.13.1-complete.jar -Dlanguage=Python3 -o src/gen src/JavaLexer.g4  
 
+```  
+
+3. Run the translator:
+```bash
+python translate.py --input test.java --output test.cpp
+```
 Parameters:
 - `--input`: path to input file (Java)
 - `--output`: path to output file (C++)
 
+4. Try to compile generated code:
+```bash
+g++ -c -std=c++20 -mconsole test.cpp
+```
 ## Usage Example
 
 ### Input Code (Java):
